@@ -14,7 +14,7 @@ module.exports = (str, bracketsConfig) => {
     return false;
   }
     
-  function deletePairs(s) {
+  let deletePairs = (s) => {
     if (!s) {
       return true;
     } else if (s.length === 1 || !ifIncludes(s, brackets)) {
@@ -28,6 +28,5 @@ module.exports = (str, bracketsConfig) => {
       return deletePairs(s);
     }
   }
-
   return deletePairs(str);
 }
