@@ -6,7 +6,12 @@ module.exports = (str, bracketsConfig) => {
   }
 
   let ifIncludes = (s, arr) => {
-    for (let element of arr) return s.includes(element) ? true : false;
+    for (let element of arr) {
+      if (s.includes(element)) {
+          return true; 
+      }
+    }
+    return false;
   }
     
   function deletePairs(s) {
@@ -26,27 +31,3 @@ module.exports = (str, bracketsConfig) => {
 
   return deletePairs(str);
 }
-
-
-
-  // let brackets = [];
-  // for (let i = 0; i < bracketsConfig.length; ++i) {
-  //   brackets[i] = bracketsConfig[i].join('');
-  // }
-  
-  // function deletePairs(str) {
-  //   let fin;
-  //   if (str.length < 2) {
-  //     fin = str;
-  //   } else {
-  //     for (let element of brackets) {
-  //       if (str.includes(element)) {
-  //         str = str.replace(element, '');
-  //       }
-  //     }
-  //     deletePairs(str);
-  //   }
-  //   return fin;
-  // }
-
-  // return deletePairs(str) ? false : true;
